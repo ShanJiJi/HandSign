@@ -16,6 +16,10 @@
 		049E15AA1CBF6679009F2ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E15A81CBF6679009F2ADB /* LaunchScreen.storyboard */; };
 		049E15B51CBF667A009F2ADB /* HandSignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 049E15B41CBF667A009F2ADB /* HandSignTests.m */; };
 		049E15C01CBF667A009F2ADB /* HandSignUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 049E15BF1CBF667A009F2ADB /* HandSignUITests.m */; };
+		049E15D91CBF66F8009F2ADB /* ACEDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 049E15D61CBF66F8009F2ADB /* ACEDrawingTools.m */; };
+		049E15DA1CBF66F8009F2ADB /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049E15D81CBF66F8009F2ADB /* ACEDrawingView.m */; };
+		049E15DC1CBF6D0D009F2ADB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049E15DB1CBF6D0D009F2ADB /* CoreGraphics.framework */; };
+		049E15DE1CBF6D2B009F2ADB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049E15DD1CBF6D2B009F2ADB /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 		049E15BB1CBF667A009F2ADB /* HandSignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandSignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E15BF1CBF667A009F2ADB /* HandSignUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HandSignUITests.m; sourceTree = "<group>"; };
 		049E15C11CBF667A009F2ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049E15D51CBF66F8009F2ADB /* ACEDrawingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingTools.h; sourceTree = "<group>"; };
+		049E15D61CBF66F8009F2ADB /* ACEDrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingTools.m; sourceTree = "<group>"; };
+		049E15D71CBF66F8009F2ADB /* ACEDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingView.h; sourceTree = "<group>"; };
+		049E15D81CBF66F8009F2ADB /* ACEDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingView.m; sourceTree = "<group>"; };
+		049E15DB1CBF6D0D009F2ADB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		049E15DD1CBF6D2B009F2ADB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049E15DE1CBF6D2B009F2ADB /* CoreText.framework in Frameworks */,
+				049E15DC1CBF6D0D009F2ADB /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +95,8 @@
 		049E158B1CBF6679009F2ADB = {
 			isa = PBXGroup;
 			children = (
+				049E15DD1CBF6D2B009F2ADB /* CoreText.framework */,
+				049E15DB1CBF6D0D009F2ADB /* CoreGraphics.framework */,
 				049E15961CBF6679009F2ADB /* HandSign */,
 				049E15B31CBF667A009F2ADB /* HandSignTests */,
 				049E15BE1CBF667A009F2ADB /* HandSignUITests */,
@@ -104,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				049E159A1CBF6679009F2ADB /* AppDelegate.h */,
+				049E15D41CBF66F8009F2ADB /* ACEDrawingView */,
 				049E159B1CBF6679009F2ADB /* AppDelegate.m */,
 				049E159D1CBF6679009F2ADB /* ViewController.h */,
 				049E159E1CBF6679009F2ADB /* ViewController.m */,
@@ -141,6 +156,17 @@
 				049E15C11CBF667A009F2ADB /* Info.plist */,
 			);
 			path = HandSignUITests;
+			sourceTree = "<group>";
+		};
+		049E15D41CBF66F8009F2ADB /* ACEDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				049E15D51CBF66F8009F2ADB /* ACEDrawingTools.h */,
+				049E15D61CBF66F8009F2ADB /* ACEDrawingTools.m */,
+				049E15D71CBF66F8009F2ADB /* ACEDrawingView.h */,
+				049E15D81CBF66F8009F2ADB /* ACEDrawingView.m */,
+			);
+			path = ACEDrawingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +236,7 @@
 				TargetAttributes = {
 					049E15931CBF6679009F2ADB = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5965CBUPHR;
 					};
 					049E15AF1CBF667A009F2ADB = {
 						CreatedOnToolsVersion = 7.3;
@@ -275,6 +302,8 @@
 			files = (
 				049E159F1CBF6679009F2ADB /* ViewController.m in Sources */,
 				049E15A51CBF6679009F2ADB /* HandSign.xcdatamodeld in Sources */,
+				049E15D91CBF66F8009F2ADB /* ACEDrawingTools.m in Sources */,
+				049E15DA1CBF66F8009F2ADB /* ACEDrawingView.m in Sources */,
 				049E159C1CBF6679009F2ADB /* AppDelegate.m in Sources */,
 				049E15991CBF6679009F2ADB /* main.m in Sources */,
 			);
@@ -419,10 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HandSign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhenwei.123.HandSign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -430,10 +462,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HandSign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhenwei.123.HandSign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -7,8 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "ACEDrawingView/ACEDrawingView.h"
 
-@interface ViewController ()
+#import <QuartzCore/QuartzCore.h>
+
+@interface ViewController ()<ACEDrawingViewDelegate>{
+    ACEDrawingView *_drawingView;
+}
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backStepBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *redoStepBtn;
+
+
 
 @end
 
@@ -16,7 +27,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _drawingView = [[ACEDrawingView alloc] initWithFrame:self.view.frame];
+    _drawingView.backgroundColor = [UIColor greenColor];
+    [self.view insertSubview:_drawingView belowSubview:_toolBar];
+    
+    _drawingView.delegate = self;
+    
+    _drawingView.lineAlpha = 1.0;
+    _drawingView.lineWidth = 10.0;
+    _drawingView.lineColor = [UIColor whiteColor];
+    
+    
+}
+
+-(void)updateBtnStatus{
+    
+    _backStepBtn.enabled = _drawingView.canUndo;
+    _redoStepBtn.enabled = _drawingView.canRedo;
+    
+}
+
+
+- (IBAction)clearAllAction:(id)sender {
+    
+    [_drawingView clear];
+    
+}
+- (IBAction)backLastStep:(id)sender {
+    
+    [_drawingView undoLatestStep];
+    [self updateBtnStatus];
+}
+- (IBAction)redoLatestStep:(id)sender {
+    
+    [_drawingView redoLatestStep];
+    [self updateBtnStatus];
+}
+
+-(void)drawingView:(ACEDrawingView *)view didEndDrawUsingTool:(id<ACEDrawingTool>)tool{
+    [self updateBtnStatus];
 }
 
 - (void)didReceiveMemoryWarning {
